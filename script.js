@@ -1,11 +1,11 @@
+var apiKey = "166a433c57516f51dfab1f7edaed8413";
+
 $(document).ready(function(){
-
-    var apiKey = "166a433c57516f51dfab1f7edaed8413";
-
+    console.log("Document loaded.");
 // click button 
         $("#submit").click(function(){
             getWeather();
-            // var userInput = $("#input").val();
+            var userInput = $("#input").val();
         });
 
 // current forecast 
@@ -16,11 +16,13 @@ $(document).ready(function(){
                 type: "GET",
                 dataType: "jsonp",
                 success: function(data){
+                    console.log("Ajax is not defined.");
                     $("#city").html(data.name + "," + data.sys.country);
                 }
-            })
-            }
+            });
+        };
 
+            
             var apiKey = "166a433c57516f51dfab1f7edaed8413";
             var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
         
