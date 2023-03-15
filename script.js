@@ -8,7 +8,6 @@ $(document).ready(function(){
             // var userInput = $("#input").val();
         });
 
-
 // current forecast 
             function getWeather(){
                 var city = $("#input").val();
@@ -27,14 +26,7 @@ $(document).ready(function(){
         
             
         
-    })
+    });
 
 
-   
-
-
-
-
-
-});
 
