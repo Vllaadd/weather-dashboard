@@ -16,7 +16,7 @@ $(document).ready(function(){
                 dataType: "jsonp",
                 success: function(data){
                     console.log("Ajax is not defined.");
-                    $("#city").html(data.name + "," + data.sys.country);
+                    $("#city").html(data.name + " , " + data.sys.country);
                 }
             });
         };
