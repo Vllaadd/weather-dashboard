@@ -5,13 +5,12 @@ $(document).ready(function(){
 // click button 
         $("#submit").click(function(){
             getWeather();
-            var userInput = $("#input").val();
         });
 
 // current forecast 
             function getWeather(){
                 var city = $("#input").val();
-            $ajax({
+            $.ajax({
                 url: url,
                 type: "GET",
                 dataType: "jsonp",
