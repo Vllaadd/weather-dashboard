@@ -24,19 +24,29 @@ $(document).ready(function(){
         };
 
 // five day forecast•••••••••••••••••••••••••••••••••••••• 
-            function fiveDayForecast(data){
+        var fiveDayKey = "166a433c57516f51dfab1f7edaed8413";
+       let fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast";
+
+            function fiveDayForecast(){
+                var city = $("#input").val();
                 $.ajax({
-                    url: "https://api.openweathermap.org/data/2.5/forecastq=" + city + "&units=imperial&appid=" + apiKey,
+                    url: fiveDayUrl,
                     dataType: "json",
                     type: "GET",
+                    data: {
+                        q: city,
+                        appid: fiveDayKey,
+                        units: "imperial",
+                        cnt: "40"
+                    },
                     success: function(data){
                         let colDiv = $("<div>").addClass("col col-lg-2");
                         let carD = $("<div>").addClass("card text-white bg-primary m-3");
                         let cardBody = $("<div>").addClass("card-body");
-                        let cardTitle = $("<h5>").addClass("card-title").text(new Date);
-                        let cardText1 = $("<p>").addClass("card-text").text("Temp: " + data.main.temp)
-                        colDiv.append(carD.append(cardBody.append(cardTitle, cardText1)));
-                        $("five-day-forecast").append(colDiv);
+                        // let cardTitle = $("<h5>").addClass("card-title").text(new Date);
+                        // let cardText1 = $("<p>").addClass("card-text").text("Temp: " + data.main.temp);
+                        colDiv.append(carD.append(cardBody));
+                        $(".five-day-forecast").append(colDiv);
                     }
                 })
             }
