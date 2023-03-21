@@ -17,6 +17,9 @@ $(document).ready(function(){
                 success: function(data){
                     console.log("Ajax is not defined.");
                     $("#city").html(data.name + " , " + data.sys.country);
+                    $("#temp").html(data.main.temp);
+                    $("#humidity").html(data.main.humidity);
+                    $("#wind").html(data.wind);
                 }
             });
         };
