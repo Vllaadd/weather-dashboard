@@ -34,8 +34,9 @@ $(document).ready(function(){
                         let carD = $("<div>").addClass("card text-white bg-primary m-3");
                         let cardBody = $("<div>").addClass("card-body");
                         let cardTitle = $("<h5>").addClass("card-title").text(new Date);
-                        let cardText1 = $("<p>").addClass("card-text").text("Temp: " + main.temp)
+                        let cardText1 = $("<p>").addClass("card-text").text("Temp: " + data.main.temp)
                         colDiv.append(carD.append(cardBody.append(cardTitle, cardText1)));
+                        $("five-day-forecast").append(colDiv);
                     }
                 })
             }
