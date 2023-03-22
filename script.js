@@ -1,13 +1,16 @@
 var apiKey = "166a433c57516f51dfab1f7edaed8413";
 
 $(document).ready(function(){
+
 // click button•••••••••••••••••••••••••••••••••••••••••••
+
         $("#submit").click(function(){
             getWeather();
             fiveDayForecast();
         });
 
 // current forecast•••••••••••••••••••••••••••••••••••••••
+
             function getWeather(){
                 var city = $("#input").val();
             $.ajax({
@@ -26,6 +29,7 @@ $(document).ready(function(){
         };
 
 // five day forecast•••••••••••••••••••••••••••••••••••••• 
+
         var fiveDayKey = "166a433c57516f51dfab1f7edaed8413";
        let fiveDayUrl = "https://api.openweathermap.org/data/2.5/forecast";
 
@@ -58,6 +62,7 @@ $(document).ready(function(){
             }
 
 //UV index ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
             function uvIndex(lat, lon){
                 $.ajax({
                     url: "https://api.openweathermap.org/data/2.5/uvi?",
