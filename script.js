@@ -46,7 +46,7 @@ $(document).ready(function(){
                             let carD = $("<div>").addClass("card text-white bg-primary m-3");
                             let cardBody = $("<div>").addClass("card-body");
                             let cardTitle = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString("en-US"));
-                            let img = $("<img>").attr("src", data.list[i].weather[0].icon + "png");
+                            let img = $("<img>").attr("src","https://api.openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
                             let cardText1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp + "F");
                             var cardText2 = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%"); 
                             colDiv.append(carD.append(cardBody.append(img, cardTitle, cardText1, cardText2)));
