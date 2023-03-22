@@ -15,6 +15,7 @@ $(document).ready(function(){
                 type: "GET",
                 dataType: "jsonp",
                 success: function(data){
+                    $("#date").html(new Date().toLocaleDateString("en-US"));
                     $("#city").html(data.name + " , " + data.sys.country);
                     $("#temp").html(data.main.temp);
                     $("#humidity").html(data.main.humidity);
@@ -40,14 +41,17 @@ $(document).ready(function(){
                         cnt: "40"
                     },
                     success: function(data){
+                        for(var i=0; i<5; i++){
                             let colDiv = $("<div>").addClass("col col-lg-2");
                             let carD = $("<div>").addClass("card text-white bg-primary m-3");
                             let cardBody = $("<div>").addClass("card-body");
-                            // let cardTitle = $("<h5>").addClass("card-title").text(new Date(data.dt_txt).toLocaleDateString());
-                            let cardText1 = $("<p>").addClass("card-text").text("City: " + data.city.name);
-                            var cardText2 = $("<p>").addClass("card-text").text("Country: " + data.city.coord.country); 
-                            colDiv.append(carD.append(cardBody.append(cardText1, cardText2)));
+                            let cardTitle = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString("en-US"));
+                            let img = $("<img>").attr("src", data.list[i].weather[0].icon + "png");
+                            let cardText1 = $("<p>").addClass("card-text").text("City: " + data.list[i].main.temp + "F");
+                            var cardText2 = $("<p>").addClass("card-text").text("Country: " + data.list[i].main.humidity + "%"); 
+                            colDiv.append(carD.append(cardBody.append(img, cardTitle, cardText1, cardText2)));
                             $("#five-day-forecast").append(colDiv);
+                        }
                     }
                 })
             }
