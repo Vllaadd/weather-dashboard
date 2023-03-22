@@ -19,7 +19,7 @@ $(document).ready(function(){
                     $("#city").html(data.name + " , " + data.sys.country);
                     $("#temp").html(data.main.temp);
                     $("#humidity").html(data.main.humidity);
-                    $("#wind").html(data.wind);
+                    $("#wind").html(data.wind.speed);
                 }
             });
         };
