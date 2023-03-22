@@ -46,8 +46,8 @@ $(document).ready(function(){
                         cnt: "40"
                     },
                     success: function(data){
-                        for(var i=0; i<data.list.length; i+=5){
-                            let colDiv = $("<div>").addClass("col col-lg-2");
+                        for(var i=0; i<data.list.length; i+=8){
+                            let colDiv = $("<div>").addClass("col");
                             let carD = $("<div>").addClass("card text-white bg-primary m-3");
                             let cardBody = $("<div>").addClass("card-body");
                             let cardTitle = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString("en-US"));
