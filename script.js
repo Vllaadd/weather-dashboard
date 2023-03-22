@@ -47,8 +47,8 @@ $(document).ready(function(){
                             let cardBody = $("<div>").addClass("card-body");
                             let cardTitle = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString("en-US"));
                             let img = $("<img>").attr("src", data.list[i].weather[0].icon + "png");
-                            let cardText1 = $("<p>").addClass("card-text").text("City: " + data.list[i].main.temp + "F");
-                            var cardText2 = $("<p>").addClass("card-text").text("Country: " + data.list[i].main.humidity + "%"); 
+                            let cardText1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp + "F");
+                            var cardText2 = $("<p>").addClass("card-text").text("Humidity: " + data.list[i].main.humidity + "%"); 
                             colDiv.append(carD.append(cardBody.append(img, cardTitle, cardText1, cardText2)));
                             $("#five-day-forecast").append(colDiv);
                         }
