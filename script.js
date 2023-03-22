@@ -20,6 +20,7 @@ $(document).ready(function(){
                     $("#temp").html(data.main.temp);
                     $("#humidity").html(data.main.humidity);
                     $("#wind").html(data.wind.speed);
+                    uvIndex(data.coord.lat, data.coord.lon);
                 }
             });
         };
@@ -55,9 +56,23 @@ $(document).ready(function(){
                     }
                 })
             }
-        
-            
-        
+
+//UV index ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+            function uvIndex(lat, lon){
+                $.ajax({
+                    url: "https://api.openweathermap.org/data/2.5/uvi?",
+                    dataType: "json",
+                    type: "GET",
+                    data: {
+                        lat: lat,
+                        lon:lon,
+                        appid: apiKey
+                    },
+                    success: function(data){
+                        $("#uv").html(data.value)
+                    }
+                })
+            }    
     });
 
 
