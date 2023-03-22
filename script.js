@@ -40,13 +40,14 @@ $(document).ready(function(){
                         cnt: "40"
                     },
                     success: function(data){
-                        let colDiv = $("<div>").addClass("col col-lg-2");
-                        let carD = $("<div>").addClass("card text-white bg-primary m-3");
-                        let cardBody = $("<div>").addClass("card-body");
-                        // let cardTitle = $("<h5>").addClass("card-title").text(new Date);
-                        // let cardText1 = $("<p>").addClass("card-text").text("Temp: " + data.main.temp);
-                        colDiv.append(carD.append(cardBody));
-                        $(".five-day-forecast").append(colDiv);
+                            let colDiv = $("<div>").addClass("col col-lg-2");
+                            let carD = $("<div>").addClass("card text-white bg-primary m-3");
+                            let cardBody = $("<div>").addClass("card-body");
+                            // let cardTitle = $("<h5>").addClass("card-title").text(new Date(data.dt_txt).toLocaleDateString());
+                            let cardText1 = $("<p>").addClass("card-text").text("City: " + data.city.name);
+                            var cardText2 = $("<p>").addClass("card-text").text("Country: " + data.city.coord.country); 
+                            colDiv.append(carD.append(cardBody.append(cardText1, cardText2)));
+                            $("#five-day-forecast").append(colDiv);
                     }
                 })
             }
