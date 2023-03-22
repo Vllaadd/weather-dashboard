@@ -41,7 +41,7 @@ $(document).ready(function(){
                         cnt: "40"
                     },
                     success: function(data){
-                        for(var i=0; i<5; i++){
+                        for(var i=0; i<data.list.length; i+=5){
                             let colDiv = $("<div>").addClass("col col-lg-2");
                             let carD = $("<div>").addClass("card text-white bg-primary m-3");
                             let cardBody = $("<div>").addClass("card-body");
