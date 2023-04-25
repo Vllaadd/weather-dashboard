@@ -16,7 +16,7 @@ The Weather Dashboard is a project that enables users to retrieve a weather fore
 1. Close this repository to your local machine. 
 2. Open the 'index.html' file in your web browser  
 
-# Usage 
+## Usage 
 
 1. The user inputs the name of a city of their choice into the designated input field.
 2. The dashboard retrieves the weather forecast for the current day in the specified city and displays it to the user.
